@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/1717b30b2a.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title>Scholarship Management System</title>
+</head>
+<body>
+<style>
+    .pushContent{margin-top:90px}
+</style>
+<div>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Scholarship Management System</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+
+<div class="container pushContent">
+  <div class="row mt-5">
+    <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+      <h1 class="text-center">Apply For Scholarship <i class="fa-solid fa-user-graduate"></i></h1>
+      <div class="card-body">
+        <div th:if="${param.error}">
+          <div class="alert alert-danger">Invalid Information Provided. Kindly cross-check all input</div>
+        </div>
+        <form method="post" role="form" th:action="@{/scholarship/apply}" th:object="${scholarship}">
+          <div class="form-group mt-3">
+            <label>First name</label>
+            <input
+                    type="text"
+                    name="firstName"
+                    id="firstName"
+                    class="form-control"
+                    field="*{firstName}"
+                    placeholder="Enter first name">
+          </div>
+
+          <div class="form-group mt-3">
+            <label>Surname</label>
+            <input
+                    type="text"
+                    name="surname"
+                    id="surname"
+                    class="form-control"
+                    field="*{surname}"
+                    placeholder="Enter surname">
+          </div>
+
+          <div class="form-group mt-3">
+            <label>Gender</label>
+            <select class="form-select" name="gender" id="gender" field="*{gender}">
+              <option value="null" selected="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+
+          <div class="form-group mt-3">
+            <label>Date of Birth</label>
+            <input
+                    type="date"
+                    name="dateOfBirth"
+                    id="dateOfBirth"
+                    class="form-control"
+                    field="*{dateOfBirth}"
+                    placeholder="Enter date of birth">
+          </div>
+
+          <div class="form-group mt-3">
+            <label>Phone No.</label>
+            <input
+                    type="text"
+                    name="phone"
+                    id="phone"
+                    class="form-control"
+                    field="*{phone}"
+                    placeholder="Enter phone number">
+          </div>
+
+          <div class="form-group mt-3">
+            <label>Email</label>
+            <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="form-control"
+                    field="*{email}"
+                    placeholder="Enter email">
+          </div>
+
+          <div class="form-group mt-3">
+            <label>Student No.</label>
+            <input
+                    type="text"
+                    name="indexNumber"
+                    id="indexNumber"
+                    class="form-control"
+                    field="*{indexNumber}"
+                    placeholder="Enter Student No">
+          </div>
+
+          <div class="form-group mt-3">
+            <label>Date of Completion</label>
+            <input
+                    type="date"
+                    name="dateOfCompletion"
+                    id="dateOfCompletion"
+                    class="form-control"
+                    field="*{dateOfCompletion}"
+                    placeholder="Enter date of completion">
+          </div>
+
+          <div class="form-group mt-3">
+            <label>Name of Institution.</label>
+            <input
+                    type="text"
+                    name="nameOfInstitution"
+                    id="nameOfInstitution"
+                    class="form-control"
+                    field="*{nameOfInstitution}"
+                    placeholder="Enter Name of Institution">
+          </div>
+
+          <div class="form-group mt-3">
+            <label>Level</label>
+            <select class="form-select" name="level" id="level" field="*{level}">
+              <option value="null" selected="">Select Level</option>
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+            </select>
+          </div>
+
+          <div class="form-group mt-3">
+            <label>Programme.</label>
+            <input
+                    type="text"
+                    name="programme"
+                    id="programme"
+                    class="form-control"
+                    field="*{programme}"
+                    placeholder="Enter programme">
+          </div>
+
+          <div class="form-group mt-3">
+            <label>Fees Per Year.</label>
+            <input
+                    min="0"
+                    value="0"
+                    step="0.01"
+                    type="number"
+                    name="feesPerYear"
+                    id="feesPerYear"
+                    class="form-control"
+                    field="*{feesPerYear}"
+                    placeholder="0.00">
+          </div>
+
+          <div class="box-footer mt-3">
+            <button type="submit" class="btn btn-outline-dark btn-lg-center">Submit <i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

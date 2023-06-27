@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/1717b30b2a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Scholarship Management System</title>
+</head>
+<body>
+<style>
+    .pushContent{margin-top:70px}
+</style>
+<div class="">
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Scholarship Management System</a>
+
+        <!-- Toggler/collapsible Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </nav>
+</div>
+<div class="container pushContent">
+    <div class="row mt-5">
+        <h1>
+            List of Your Approved Scholarship
+        </h1>
+    </div>
+    <table class="table table-hover table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th> Scholarship Application Id </th>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> Institution </th>
+            <th> Fees Per Year </th>
+            <th> Scholarship Type </th>
+            <th> No. of As </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="approvedScholarship: ${approvedScholarships}" data-toggle="modal" data-target="#staticBackdrop">
+            <td th:text="${approvedScholarship.scholarshipApplicationId}"></td>
+            <td th:text="${approvedScholarship.firstName}"></td>
+            <td th:text="${approvedScholarship.surname}"></td>
+            <td th:text="${approvedScholarship.nameOfInstitution}"></td>
+            <td th:text="${approvedScholarship.feesPerYear}"></td>
+            <td th:text="${approvedScholarship.scholarshipType}"></td>
+            <td th:text="${approvedScholarship.numOfAs}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
