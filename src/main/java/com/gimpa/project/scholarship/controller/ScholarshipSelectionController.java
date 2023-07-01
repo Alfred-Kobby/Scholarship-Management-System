@@ -1,6 +1,5 @@
 package com.gimpa.project.scholarship.controller;
 
-import com.gimpa.project.scholarship.entity.ApprovedScholarship;
 import com.gimpa.project.scholarship.model.FinalGradePoints;
 import com.gimpa.project.scholarship.service.ScholarshipSelectionService;
 import lombok.extern.slf4j.Slf4j;

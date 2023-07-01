@@ -33,6 +33,7 @@ public class DashboardController {
                                             BindingResult result,
                                             Model model){
         LoginRequest loginRequest = new LoginRequest(user.getEmail(), user.getPassword());
+        log.info("LoginRequest: {}", JsonUtility.toJson(loginRequest));
         ServiceResponse loginResponse = loginService.processLogin(loginRequest);
         log.info("LoginResponse: {}", JsonUtility.toJson(loginResponse));
         if(loginResponse.getResponseCode().equalsIgnoreCase("01")){
