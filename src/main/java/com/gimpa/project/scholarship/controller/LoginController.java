@@ -26,4 +26,9 @@ public class LoginController {
     public String login(){
         return "login";
     }
+
+    @GetMapping("/admin/login")
+    public String adminLogin(){
+        return "admin_login";
+    }
 }
