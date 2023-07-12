@@ -42,4 +42,4 @@ CREATE DATABASE IF NOT EXISTS scholarship;
 * Admin after logging in, gets to see all received scholarships and hit the process scholarship button to process it
 
 ## Architecture
-![The Maze Flow Chart](https://imgur.com/a/Lf3ddj9)
+![Scholarship Management System Architecture Diagram](https://imgur.com/a/Lf3ddj9)
